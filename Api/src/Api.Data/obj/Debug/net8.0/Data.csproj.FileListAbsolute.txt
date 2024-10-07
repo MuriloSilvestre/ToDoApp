@@ -15,3 +15,4 @@ C:\Users\mserr\Documents\GitHub\ToDoApp\Api\src\Api.Data\obj\Debug\net8.0\refint
 C:\Users\mserr\Documents\GitHub\ToDoApp\Api\src\Api.Data\obj\Debug\net8.0\Data.pdb
 C:\Users\mserr\Documents\GitHub\ToDoApp\Api\src\Api.Data\obj\Debug\net8.0\Data.genruntimeconfig.cache
 C:\Users\mserr\Documents\GitHub\ToDoApp\Api\src\Api.Data\obj\Debug\net8.0\ref\Data.dll
+C:\Users\mserr\Documents\GitHub\ToDoApp\Api\src\Api.Data\obj\Debug\net8.0\Data.sourcelink.json

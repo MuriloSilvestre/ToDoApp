@@ -82,3 +82,5 @@ C:\Users\mserr\Documents\GitHub\ToDoApp\Api\src\Api.Application\obj\Debug\net8.0
 C:\Users\mserr\Documents\GitHub\ToDoApp\Api\src\Api.Application\obj\Debug\net8.0\application.pdb
 C:\Users\mserr\Documents\GitHub\ToDoApp\Api\src\Api.Application\obj\Debug\net8.0\application.genruntimeconfig.cache
 C:\Users\mserr\Documents\GitHub\ToDoApp\Api\src\Api.Application\obj\Debug\net8.0\ref\application.dll
+C:\Users\mserr\Documents\GitHub\ToDoApp\Api\src\Api.Application\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\mserr\Documents\GitHub\ToDoApp\Api\src\Api.Application\obj\Debug\net8.0\application.sourcelink.json

@@ -75,6 +75,7 @@ namespace Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -83,14 +84,18 @@ namespace Data.Migrations
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
 
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
                     b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
                     b.HasIndex("Email")
-                        .IsUnique()
-                        .HasFilter("[Email] IS NOT NULL");
+                        .IsUnique();
 
                     b.ToTable("User", (string)null);
 
@@ -98,10 +103,11 @@ namespace Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreateAt = new DateTime(2024, 10, 3, 15, 23, 58, 283, DateTimeKind.Local).AddTicks(1869),
+                            CreateAt = new DateTime(2024, 10, 6, 22, 18, 19, 735, DateTimeKind.Local).AddTicks(383),
                             Email = "adm@mail.com",
                             Name = "Administrador",
-                            UpdateAt = new DateTime(2024, 10, 3, 15, 23, 58, 283, DateTimeKind.Local).AddTicks(1879)
+                            Password = "$2a$11$vsHEtnaaZVyF8gfx9Ad5JOq8AZXhIi37WmYHDuIaU8nTkTOiWWnf6",
+                            UpdateAt = new DateTime(2024, 10, 6, 22, 18, 19, 735, DateTimeKind.Local).AddTicks(395)
                         });
                 });
 

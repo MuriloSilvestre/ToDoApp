@@ -45,6 +45,32 @@ namespace Api.Application.Controllers
 
         }
 
+        [Authorize("Bearer")]
+        [HttpGet("user/{userId}")]
+        public async Task<ActionResult> GetTasksByUser(int userId)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                var result = await _service.GetTasksByUser(userId);
+                if (result == null)
+                {
+                    return NotFound(new { message = "Nenhuma tarefa encontrada para o usuário." });
+                }
+
+                return Ok(result);
+            }
+            catch (ArgumentException e)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
+            }
+        }
+
+
         [HttpGet]
         [Route("{id}", Name = "GetTaskWithId")]
         public async Task<ActionResult> Get(int id)

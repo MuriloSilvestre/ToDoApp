@@ -8,6 +8,7 @@ using Api.Domain.Interfaces.Services.User;
 using Api.Domain.Models;
 using Api.Domain.Repository;
 using AutoMapper;
+using BCrypt.Net;
 
 namespace Api.Service.Services
 {
@@ -24,12 +25,12 @@ namespace Api.Service.Services
             _userrepository = userrepository;
         }
 
-        public async Task<bool> Delete(int  id)
+        public async Task<bool> Delete(int id)
         {
             return await _repository.DeleteAsync(id);
         }
 
-        public async Task<UserDto> Get(int  id)
+        public async Task<UserDto> Get(int id)
         {
             var entity = await _repository.SelectAsync(id);
             return _mapper.Map<UserDto>(entity);
@@ -44,6 +45,9 @@ namespace Api.Service.Services
         public async Task<UserDtoCreateResult> Post(UserDtoCreate user)
         {
             var model = _mapper.Map<UserModel>(user);
+
+            model.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
+
             var entity = _mapper.Map<UserEntity>(model);
             var result = await _repository.InsertAsync(entity);
 
@@ -53,8 +57,13 @@ namespace Api.Service.Services
         public async Task<UserDtoUpdateResult> Put(UserDtoUpdate user)
         {
             var model = _mapper.Map<UserModel>(user);
-            var entity = _mapper.Map<UserEntity>(model);
 
+            if (!string.IsNullOrEmpty(user.Password))
+            {
+                model.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
+            }
+
+            var entity = _mapper.Map<UserEntity>(model);
             var result = await _repository.UpdateAsync(entity);
             return _mapper.Map<UserDtoUpdateResult>(result);
         }

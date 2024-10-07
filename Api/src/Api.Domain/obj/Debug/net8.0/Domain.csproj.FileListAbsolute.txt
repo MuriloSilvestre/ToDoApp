@@ -10,3 +10,4 @@ C:\Users\mserr\Documents\GitHub\ToDoApp\Api\src\Api.Domain\obj\Debug\net8.0\Doma
 C:\Users\mserr\Documents\GitHub\ToDoApp\Api\src\Api.Domain\obj\Debug\net8.0\refint\Domain.dll
 C:\Users\mserr\Documents\GitHub\ToDoApp\Api\src\Api.Domain\obj\Debug\net8.0\Domain.pdb
 C:\Users\mserr\Documents\GitHub\ToDoApp\Api\src\Api.Domain\obj\Debug\net8.0\ref\Domain.dll
+C:\Users\mserr\Documents\GitHub\ToDoApp\Api\src\Api.Domain\obj\Debug\net8.0\Domain.sourcelink.json

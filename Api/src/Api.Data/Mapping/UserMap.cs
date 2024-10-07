@@ -20,7 +20,12 @@ namespace Api.Data.Mapping
                    .HasMaxLength(60);
 
             builder.Property(u => u.Email)
-                   .HasMaxLength(100);
+                   .HasMaxLength(100)
+                   .IsRequired();
+
+            builder.Property(u => u.Password)
+                   .IsRequired()
+                   .HasMaxLength(255);
         }
     }
 }

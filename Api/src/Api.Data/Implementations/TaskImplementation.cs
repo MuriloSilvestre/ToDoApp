@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Api.Data.Context;
@@ -17,10 +18,17 @@ namespace Api.Data.Implementations
             _dataset = context.Set<TaskEntity>();
         }
 
-        public async Task<TaskEntity> SelectAsync(string titulo)
+        public async Task<TaskEntity> getTasksByTitle(string title)
         {
             return await _dataset.Include(c => c.Title)
-                                 .SingleOrDefaultAsync(u => u.Title.Equals(titulo));
+                                 .SingleOrDefaultAsync(u => u.Title.Equals(title));
+        }
+
+        public async Task<IEnumerable<TaskEntity>> GetTasksByUser(int userId)
+        {
+            return await _dataset
+                         .Where(u => u.UserId == userId)
+                         .ToListAsync();
         }
     }
 }

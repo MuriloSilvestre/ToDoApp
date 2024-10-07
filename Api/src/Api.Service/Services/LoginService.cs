@@ -10,6 +10,7 @@ using Api.Domain.Repository;
 using Api.Domain.Security;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using BCrypt.Net;
 
 namespace Api.Service.Services
 {
@@ -34,7 +35,7 @@ namespace Api.Service.Services
             if (user != null && !string.IsNullOrWhiteSpace(user.Email))
             {
                 baseUser = await _repository.FindByLogin(user.Email);
-                if (baseUser == null)
+                if (baseUser == null || !BCrypt.Net.BCrypt.Verify(user.Password, baseUser.Password))
                 {
                     return new
                     {
@@ -99,6 +100,5 @@ namespace Api.Service.Services
                 message = "Usuário Logado com sucesso"
             };
         }
-
     }
 }

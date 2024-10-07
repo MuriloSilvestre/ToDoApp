@@ -9,6 +9,7 @@ namespace Api.Domain.Interfaces.Services.Task
     {
         Task<TaskDto> Get(int id);
         Task<IEnumerable<TaskDto>> GetAll();
+        Task<IEnumerable<TaskDto>> GetTasksByUser(int userId);
         Task<TaskDtoCreateResult> Post(TaskDtoCreate task);
         Task<TaskDtoUpdateResult> Put(TaskDtoUpdate task);
         Task<bool> Delete(int id);

@@ -2,7 +2,6 @@ using System;
 using System.Net;
 using System.Threading.Tasks;
 using Api.Domain.Dtos;
-using Api.Domain.Entities;
 using Api.Domain.Interfaces.Services.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -24,7 +23,7 @@ namespace Api.Application.Controllers
             }
             if (loginDto == null)
             {
-                return BadRequest(ModelState);
+                return BadRequest(new { message = "Dados de login inválidos." });
             }
 
             try
@@ -36,7 +35,7 @@ namespace Api.Application.Controllers
                 }
                 else
                 {
-                    return NotFound();
+                    return NotFound(new { message = "Usuário ou senha inválidos." });
                 }
             }
             catch (ArgumentException e)
@@ -44,6 +43,5 @@ namespace Api.Application.Controllers
                 return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
             }
         }
-
     }
 }

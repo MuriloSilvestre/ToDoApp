@@ -35,6 +35,12 @@ namespace Api.Service.Services
             return _mapper.Map<IEnumerable<TaskDto>>(listEntity);
         }
 
+        public async Task<IEnumerable<TaskDto>> GetTasksByUser(int userId)
+        {
+            var tasks = await _repository.GetTasksByUser(userId);
+            return _mapper.Map<IEnumerable<TaskDto>>(tasks);
+        }
+
         public async Task<TaskDto> Get(int id)
         {
             var entity = await _repository.SelectAsync(id);
@@ -43,7 +49,7 @@ namespace Api.Service.Services
 
         public async Task<TaskDto> Get(string titulo)
         {
-            var entity = await _repository.SelectAsync(titulo);
+            var entity = await _repository.getTasksByTitle(titulo);
             return _mapper.Map<TaskDto>(entity);
         }
 
