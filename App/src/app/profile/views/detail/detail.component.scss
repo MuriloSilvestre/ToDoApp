@@ -1,0 +1,61 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem 32px;
+    width: 100vw;
+    overflow: auto;
+    height: calc(100vh - 241px);
+    gap: 1.5rem;
+
+    span {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 100%;
+      max-width: 40vw;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 30px;
+    }
+    .header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      h2 {
+        margin: 0;
+        text-align: center;
+      }
+    }
+    .mudar-senha {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      overflow-x: auto;
+      width: 100%;
+      max-width: 40vw;
+    }
+
+    .footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 40vw;
+    }
+  }
+}

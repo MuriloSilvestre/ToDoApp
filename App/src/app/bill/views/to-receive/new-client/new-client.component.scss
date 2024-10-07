@@ -1,0 +1,42 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+  .content {
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    gap: 8px;
+    width: 100vw;
+    .header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      h2 {
+        margin: 0;
+      }
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 5px 2rem;
+      padding: 16px 3rem;
+      height: calc(100vh - 236px);
+      width: 100vw;
+      overflow-x: auto;
+    }
+  }
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    padding: 1rem 32px;
+    gap: 32px;
+    box-sizing: border-box;
+    width: 100vw;
+  }
+}

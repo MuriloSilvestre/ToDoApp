@@ -1,0 +1,14 @@
+<div class="main">
+  <div class="header">
+    <h2>Olá {{ user.nome }}</h2>
+
+    <nav>
+      <button [routerLink]="['/perfil']">Detalhes</button>
+      <button [routerLink]="['editar']">Editar Perfil</button>
+      <button [routerLink]="['configuracoes']">Configurações</button>
+    </nav>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

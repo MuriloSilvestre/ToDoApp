@@ -1,0 +1,22 @@
+<div class="header background-black">
+  <div class="logo" [routerLink]="['/home']">
+    <img src="./assets/icons/Logo.svg" />
+    <div class="nome">
+      <h1 class="font-silver">Gestão</h1>
+      <h1 class="font-red">{{ user.empresa.nome_fantasia }}</h1>
+    </div>
+  </div>
+
+  <nav *ngIf="this.router.url !== '/home'">
+    <button [routerLink]="['/estoque']" routerLinkActive="active">
+      Estoque
+    </button>
+    <button [routerLink]="['/venda']" routerLinkActive="active">Vendas</button>
+    <button [routerLink]="['/conta']" routerLinkActive="active">Contas</button>
+  </nav>
+
+  <div class="profile">
+    <button *ngIf="this.router.url !== '/home'" (click)="back()">Voltar</button>
+    <h2 class="font-white" [routerLink]="['/perfil']">Ola {{ user.nome }}!</h2>
+  </div>
+</div>

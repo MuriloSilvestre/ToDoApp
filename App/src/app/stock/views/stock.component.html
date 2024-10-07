@@ -1,0 +1,30 @@
+<div class="main">
+  <div class="header">
+    <h2>
+      {{
+        this.router.url == "/estoque"
+          ? " Estoque"
+          : this.router.url == "/estoque/nova-nota"
+          ? "Adicionar Nota Fiscal"
+          : "Novo Produto"
+      }}
+    </h2>
+    <nav
+      *ngIf="
+        this.router.url != '/estoque/novo-produto' &&
+        this.router.url != '/estoque/nova-nota'
+      "
+    >
+      <button mat-flat-button color="accent">Relatorio</button>
+      <button mat-flat-button color="primary" [routerLink]="['nova-nota']">
+        Adicionar Nota Fiscal
+      </button>
+      <button mat-flat-button color="primary" [routerLink]="['novo-produto']">
+        Adicionar Produto
+      </button>
+    </nav>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

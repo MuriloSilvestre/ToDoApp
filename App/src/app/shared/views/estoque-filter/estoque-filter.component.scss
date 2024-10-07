@@ -1,0 +1,49 @@
+@media (max-width: 1045px) {
+  .navigation {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+
+    .Active {
+      display: flex;
+      flex-direction: column;
+    }
+    .Inactive {
+      display: none;
+    }
+    .menu-group {
+      position: absolute;
+      gap: 1.5rem;
+      right: 0px;
+      top: 20px;
+      width: 300px;
+      z-index: 1;
+      padding: 1rem;
+    }
+    mat-icon {
+      float: right;
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 1045px) {
+  .navigation {
+    display: flex;
+    flex: row;
+    gap: 1.5rem;
+    .menu-group {
+      display: flex;
+      flex: row;
+      gap: 1.5rem;
+      .menu {
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+    mat-icon {
+      float: right;
+      display: none;
+    }
+  }
+}

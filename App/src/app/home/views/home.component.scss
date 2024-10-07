@@ -1,0 +1,62 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 32px;
+  height: calc(100vh - 96px);
+
+  .data {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    gap: 16rem;
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: "Poppins";
+      font-style: normal;
+      p {
+        font-size: 24px;
+        line-height: 36px;
+      }
+      span {
+        font-size: 32px;
+        line-height: 48px;
+        font-weight: 700;
+      }
+      .onTheRed {
+        color: #e10000;
+      }
+
+      .onTheGreen {
+        color: #38ce20;
+      }
+    }
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0px;
+    gap: 64px;
+    height: 100%;
+    button {
+      width: 250px;
+      height: 125px;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 48px;
+    }
+  }
+}

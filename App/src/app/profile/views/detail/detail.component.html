@@ -1,0 +1,39 @@
+<div class="main">
+  <div class="content">
+    <span>
+      <small>Nome Usuário:</small> <strong>{{ user.nome_usuario }}</strong>
+    </span>
+    <span>
+      <small>Nome:</small>
+      <strong>{{ user.nome }}</strong>
+    </span>
+    <span>
+      <small>CPF:</small> <strong>{{ user.cpf }}</strong>
+    </span>
+    <span>
+      <small>Telefone:</small> <strong>{{ user.telefone }}</strong>
+    </span>
+    <span>
+      <small>Tipo Usuário:</small>
+      <strong>{{ user.tipo_usuario }}</strong>
+    </span>
+
+    <button mat-flat-button color="primary" (click)="mudarSenha = !mudarSenha">
+      Mudar Senha
+    </button>
+    <div *ngIf="mudarSenha == true" class="mudar-senha">
+      <div class="header">
+        <h2>Digite sua senha atual</h2>
+      </div>
+
+      <div class="header">
+        <h2>Digite a nova senha</h2>
+      </div>
+
+      <div class="footer">
+        <button mat-flat-button color="accent">cancelar</button>
+        <button mat-flat-button color="primary">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
