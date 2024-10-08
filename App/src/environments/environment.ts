@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://silverapi.onrender.com',
+  apiUrl: 'http://localhost:37923/',
 };
 
 /*

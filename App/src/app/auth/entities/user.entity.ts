@@ -1,19 +1,13 @@
-import { Company } from './company.entity';
-
 export class User {
   public id?: number;
 
-  public nome_usuario!: string;
+  public Name!: string;
 
-  public senha!: string;
+  public Email!: string;
 
-  public nome!: string;
+  public Password!: string;
 
-  public cpf!: string;
+  public CreateAt!: string;
 
-  public telefone!: string;
-
-  public tipo_usuario!: string;
-
-  public empresa!: Company;
+  public UpdateAt!: string;
 }

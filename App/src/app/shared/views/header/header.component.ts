@@ -7,7 +7,7 @@ import { User } from '../../../auth/entities/user.entity';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
   public user!: User;
@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.Token.getUser();
+    console.log(this.user.Name);
   }
 
   back(): void {

@@ -1,1 +1,22 @@
-ok
+<div class="dashboard">
+  <div class="summary">
+    <div class="card">
+      <h2>Total de Tarefas</h2>
+      <p>{{ totalTasks }}</p>
+    </div>
+    <div class="card">
+      <h2>Tarefas Concluídas</h2>
+      <p>{{ completedTasks }}</p>
+    </div>
+    <div class="card">
+      <h2>Tarefas Pendentes</h2>
+      <p>{{ pendingTasks }}</p>
+    </div>
+    <div class="card">
+      <h2>Taxa de Conclusão</h2>
+      <p>{{ completionRate | number : "1.0-0" }}%</p>
+    </div>
+  </div>
+
+  <!-- Aqui você pode adicionar gráficos ou outros widgets -->
+</div>

@@ -5,7 +5,7 @@ import { TokenstorageService } from '../../../auth/service/tokenstorage.service'
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.scss'],
+  styleUrls: ['./detail.component.css'],
 })
 export class DetailComponent implements OnInit {
   public user!: User;

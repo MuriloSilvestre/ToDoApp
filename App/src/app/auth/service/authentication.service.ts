@@ -1,7 +1,6 @@
 import { User } from './../entities/user.entity';
 import { TokenstorageService } from './tokenstorage.service';
 import { Router } from '@angular/router';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, take, tap, map } from 'rxjs';
 import {
@@ -11,6 +10,7 @@ import {
   FormControl,
 } from '@angular/forms';
 import { environment } from '../../../environments/environment';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const AUTH_API = environment.apiUrl;
 const httpOptions = {
@@ -32,28 +32,28 @@ export class AuthenticationService {
     this.inicializaForm();
   }
 
-  submit(nome_usuario: string, senha: string) {
-    return this.login(nome_usuario, senha);
+  submit(Email: string, Password: string) {
+    return this.login(Email, Password);
   }
 
   inicializaForm() {
     this.formularioBasico = this.fb.group({
-      nome_usuario: [, Validators.compose([Validators.required])],
-      senha: [, Validators.compose([Validators.required])],
-      confirmarSenha: [, Validators.compose([Validators.required])],
+      Email: [, Validators.compose([Validators.required])],
+      Password: [, Validators.compose([Validators.required])],
+      confirmarPassword: [, Validators.compose([Validators.required])],
     });
   }
 
   preencheFormulario(user: User) {
     this.formularioBasico.patchValue({
-      nome_usuario: user.nome_usuario,
-      senha: user.senha,
+      Email: user.Email,
+      Password: user.Password,
     });
   }
 
-  login(nome_usuario: string, senha: string) {
+  login(Email: string, Password: string) {
     return this.http
-      .post<User>(`${AUTH_API}/user/login`, { nome_usuario, senha })
+      .post<User>(`${AUTH_API}/api/login`, { Email, Password })
       .pipe(
         map((response) => {
           this.token.saveUser(response);
@@ -61,11 +61,11 @@ export class AuthenticationService {
       );
   }
 
-  forgotpassword(senha: string, confirmarSenha: string): Observable<any> {
+  forgotpassword(Password: string, confirmarPassword: string): Observable<any> {
     return this.http.post(
       AUTH_API + 'forgotpassword',
       {
-        senha,
+        Password,
       },
       httpOptions
     );

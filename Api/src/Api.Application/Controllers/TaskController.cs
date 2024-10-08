@@ -18,7 +18,6 @@ namespace Api.Application.Controllers
             _service = service;
         }
 
-        [Authorize("Bearer")]
         [HttpGet]
         [Route("")]
         public async Task<ActionResult> Get()
