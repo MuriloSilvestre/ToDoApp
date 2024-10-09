@@ -6,6 +6,7 @@ import { Task } from '../../../task/entities/task.entity';
 
 @Component({
   selector: 'app-new-task',
+  standalone: true,
   templateUrl: './new-task.component.html',
   styleUrls: ['./new-task.component.css'],
 })

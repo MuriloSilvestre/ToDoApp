@@ -2,7 +2,7 @@ export class QueryResultsModel {
   // fields
   items: any[];
   totalCount: number;
-  errorMessage: string;
+  errorMessage: string | undefined;
 
   constructor(
     _items: any[] = [],

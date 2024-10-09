@@ -1,13 +1,16 @@
 import { User } from '../entities/user.entity';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthenticationService } from '../service/authentication.service';
 import { TokenstorageService } from '../service/tokenstorage.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-auth',
+  standalone: true,
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.css'],
+  imports: [FormsModule, ReactiveFormsModule],
 })
 export class AuthComponent implements OnInit {
   public isSuccessful: boolean = false;

@@ -40,7 +40,6 @@ export class AuthenticationService {
     this.formularioBasico = this.fb.group({
       Email: [, Validators.compose([Validators.required])],
       Password: [, Validators.compose([Validators.required])],
-      confirmarPassword: [, Validators.compose([Validators.required])],
     });
   }
 

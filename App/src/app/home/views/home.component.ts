@@ -2,11 +2,15 @@ import { Task } from './../../task/entities/task.entity';
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../../task/service/task.service';
 import { Observable } from 'rxjs';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
+  imports: [CommonModule, ReactiveFormsModule],
 })
 export class HomeComponent implements OnInit {
   totalTasks!: number;
@@ -20,7 +24,6 @@ export class HomeComponent implements OnInit {
 
   get completionRate() {
     this.tasks = this.taskService.list();
-    console.log(this.tasks);
     return (this.completedTasks / this.totalTasks) * 100;
   }
 }

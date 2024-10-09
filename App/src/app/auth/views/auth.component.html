@@ -5,10 +5,30 @@
       <div class="header">
         <h2>Seja bem vindo!</h2>
       </div>
-
-      <a>Esqueci minha Senha</a>
-
-      <button mat-flat-button color="primary" (click)="ngOnSubmit()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          required
+          [(ngModel)]="user.Email"
+          name="email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          required
+          [(ngModel)]="user.Password"
+          name="password"
+        />
+      </div>
+      <button
+        [disabled]="!authService.formularioBasico.valid"
+        (click)="ngOnSubmit()"
+      >
         Entrar
       </button>
     </form>
