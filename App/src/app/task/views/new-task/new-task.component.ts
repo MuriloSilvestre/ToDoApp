@@ -1,43 +1,55 @@
 import { TaskService } from '../../service/task.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { Location } from '@angular/common';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule, Location } from '@angular/common';
 import { Task } from '../../../task/entities/task.entity';
+import { ActivatedRoute, Router } from '@angular/router'; // Import ActivatedRoute
 
 @Component({
   selector: 'app-new-task',
   standalone: true,
   templateUrl: './new-task.component.html',
   styleUrls: ['./new-task.component.css'],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
 })
 export class NewTaskComponent implements OnInit {
-  public formGroup!: FormGroup;
-  public tasks!: Task[];
-  public hasFormErrors!: boolean;
+  public taskId!: number; // Variável para armazenar o ID da tarefa
+  IsCompleted: string = '';
 
-  constructor(private location: Location, private taskService: TaskService) {}
+  constructor(
+    private location: Location,
+    public taskService: TaskService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.hasFormErrors = false;
-    this.loadElements();
-  }
-
-  private loadElements() {
-    this.taskService.list().subscribe((res) => {
-      if (res) {
-        this.tasks = res;
+    // Capturando o parâmetro 'id' da rota
+    this.route.paramMap.subscribe((params) => {
+      const id = params.get('id');
+      if (id) {
+        this.taskId = +id; // Convertendo o ID para número
+        this.loadTask(this.taskId); // Carregar a tarefa com o ID
+      } else {
+        this.taskService.initializeForm();
       }
     });
-    this.formGroup = this.taskService.basicForm;
   }
 
-  public findtask(task: Task) {
-    this.formGroup.patchValue({
-      fornecedor: [
-        {
-          ...task,
-        },
-      ],
+  private loadTask(id: number) {
+    this.taskService.getOneById(id).subscribe({
+      next: (resData) => {
+        this.taskService.fillForm(resData);
+        this.IsCompleted = resData.isCompleted == true ? 'true' : 'false';
+      },
+      error: (error: Error) => {
+        this.clean();
+        this.taskService.error.set(error.message);
+        this.taskService.isFetching.set(false);
+      },
+      complete: () => {
+        this.taskService.isFetching.set(false);
+      },
     });
   }
 
@@ -45,32 +57,26 @@ export class NewTaskComponent implements OnInit {
     this.taskService.reset();
   }
 
-  private back(): void {
-    this.location.back();
-  }
-
   public ngOnSubmit() {
-    const controls = this.formGroup.controls;
-    if (this.formGroup.invalid) {
+    this.taskService.basicForm.patchValue({
+      IsCompleted: this.IsCompleted == 'true' ? true : false,
+      ...this.taskService.basicForm,
+    });
+    const controls = this.taskService.basicForm.controls;
+    if (this.taskService.basicForm.invalid) {
       Object.keys(controls).forEach((controlName) =>
         controls[controlName].markAsTouched()
       );
-
-      const product = this.formGroup.controls;
-
-      if (this.formGroup.invalid) {
-        Object.keys(product).forEach((controlName) =>
-          product[controlName].markAsTouched()
-        );
-      }
-
-      this.hasFormErrors = true;
       return;
     }
-    this.taskService.submit().subscribe((res) => {
-      if (!res) {
-      }
-      this.back();
-    });
+    this.taskService.submit(this.taskId);
+  }
+
+  onCancel() {
+    // Limpa o formulário
+    this.taskService.basicForm.reset();
+
+    // Redireciona para a rota de tarefas
+    this.router.navigate(['/task']);
   }
 }

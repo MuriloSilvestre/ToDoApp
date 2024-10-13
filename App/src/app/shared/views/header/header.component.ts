@@ -2,7 +2,7 @@ import { Router, RouterModule } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
 import { TokenstorageService } from '../../../auth/service/tokenstorage.service';
-import { User } from '../../../auth/entities/user.entity';
+import { User } from '../../../user/entities/user.entity';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -13,7 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [CommonModule, ReactiveFormsModule, RouterModule],
 })
 export class HeaderComponent implements OnInit {
-  public user!: User;
+  public user: any;
 
   constructor(
     private location: Location,
@@ -23,7 +23,11 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.Token.getUser();
-    console.log(this.user.Name);
+  }
+
+  logout() {
+    this.Token.signOut();
+    this.user = this.Token.getUser();
   }
 
   back(): void {

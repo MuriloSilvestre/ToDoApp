@@ -1,0 +1,51 @@
+<div>
+  <div class="filters">
+    <div class="filter-container">
+      <div class="filter-group">
+        <label for="nameFilter">Nome:</label>
+        <input
+          type="text"
+          id="nameFilter"
+          [(ngModel)]="selectedName"
+          (change)="applyFilters()"
+        />
+      </div>
+    </div>
+
+    <button (click)="resetFilters()">Limpar Filtros</button>
+  </div>
+
+  <ul class="user-list">
+    @for(user of paginatedUsers; track user.id){
+    <li class="user-item">
+      <div class="user-content">
+        <h3>{{ user.name }}</h3>
+        <p class="email">
+          E-mail:
+          {{ user.email }}
+        </p>
+      </div>
+      <div class="user-actions">
+        <button class="icon-button" (click)="edit(user.id)">
+          <span class="material-icons">edit</span>
+        </button>
+        <button class="icon-button" (click)="remove(user.id)">
+          <span class="material-icons">delete</span>
+        </button>
+      </div>
+    </li>
+    } @empty {
+    <li>Não a nenhuma usuário registrada.</li>
+    }
+  </ul>
+
+  <div class="paginator">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">
+      Anterior
+    </button>
+    <span>Página {{ currentPage }} de {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+      Próxima
+    </button>
+  </div>
+</div>

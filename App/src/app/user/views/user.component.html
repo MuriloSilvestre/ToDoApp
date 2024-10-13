@@ -1,0 +1,21 @@
+<div class="main">
+  <div class="header">
+    <h2>
+      {{
+        this.router.url == "/user"
+          ? "Usuários"
+          : this.router.url == "/user/new-user"
+          ? "Nova Usuário"
+          : "Editar Usuário"
+      }}
+    </h2>
+    <nav>
+      <button class="add-button" [routerLink]="['new-user']">
+        Adicionar Usuário
+      </button>
+    </nav>
+  </div>
+  <div class="content">
+    <router-outlet />
+  </div>
+</div>

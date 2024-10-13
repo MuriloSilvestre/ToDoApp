@@ -126,7 +126,8 @@ namespace Api.Application.Controllers
 
         [Authorize("Bearer")]
         [HttpPut]
-        public async Task<ActionResult> Put([FromBody] TaskDtoUpdate dtoUpdate)
+        [Route("{id}", Name = "putTaskWithId")]
+        public async Task<ActionResult> Put(int id, [FromBody] TaskDtoUpdate dtoUpdate)
         {
             if (!ModelState.IsValid)
             {

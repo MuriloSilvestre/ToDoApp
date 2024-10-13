@@ -3,8 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B407993A-284E-4949-9308-D4E2A5BA92A6}|Api.Domain\\Domain.csproj|c:\\users\\mserr\\documents\\github\\todoapp\\api\\src\\api.domain\\dtos\\user\\userdtocreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B407993A-284E-4949-9308-D4E2A5BA92A6}|Api.Domain\\Domain.csproj|solutionrelative:api.domain\\dtos\\user\\userdtocreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE402640-A076-4010-909D-8E9EAFF08A8D}|Api.Service\\Service.csproj|c:\\users\\mserr\\documents\\github\\todoapp\\api\\src\\api.service\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE402640-A076-4010-909D-8E9EAFF08A8D}|Api.Service\\Service.csproj|solutionrelative:api.service\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D356CC47-41EE-4B95-8457-AD3D19A77F0F}|Api.Application\\application.csproj|c:\\users\\mserr\\documents\\github\\todoapp\\api\\src\\api.application\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D356CC47-41EE-4B95-8457-AD3D19A77F0F}|Api.Application\\application.csproj|solutionrelative:api.application\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B407993A-284E-4949-9308-D4E2A5BA92A6}|Api.Domain\\Domain.csproj|c:\\users\\mserr\\documents\\github\\todoapp\\api\\src\\api.domain\\dtos\\user\\userdtoupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B407993A-284E-4949-9308-D4E2A5BA92A6}|Api.Domain\\Domain.csproj|solutionrelative:api.domain\\dtos\\user\\userdtoupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B407993A-284E-4949-9308-D4E2A5BA92A6}|Api.Domain\\Domain.csproj|c:\\users\\mserr\\documents\\github\\todoapp\\api\\src\\api.domain\\dtos\\user\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B407993A-284E-4949-9308-D4E2A5BA92A6}|Api.Domain\\Domain.csproj|solutionrelative:api.domain\\dtos\\user\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D356CC47-41EE-4B95-8457-AD3D19A77F0F}|Api.Application\\application.csproj|c:\\users\\mserr\\documents\\github\\todoapp\\api\\src\\api.application\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D356CC47-41EE-4B95-8457-AD3D19A77F0F}|Api.Application\\application.csproj|solutionrelative:api.application\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE402640-A076-4010-909D-8E9EAFF08A8D}|Api.Service\\Service.csproj|c:\\users\\mserr\\documents\\github\\todoapp\\api\\src\\api.service\\services\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE402640-A076-4010-909D-8E9EAFF08A8D}|Api.Service\\Service.csproj|solutionrelative:api.service\\services\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B407993A-284E-4949-9308-D4E2A5BA92A6}|Api.Domain\\Domain.csproj|c:\\users\\mserr\\documents\\github\\todoapp\\api\\src\\api.domain\\repository\\itaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B407993A-284E-4949-9308-D4E2A5BA92A6}|Api.Domain\\Domain.csproj|solutionrelative:api.domain\\repository\\itaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D356CC47-41EE-4B95-8457-AD3D19A77F0F}|Api.Application\\application.csproj|c:\\users\\mserr\\documents\\github\\todoapp\\api\\src\\api.application\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D356CC47-41EE-4B95-8457-AD3D19A77F0F}|Api.Application\\application.csproj|solutionrelative:api.application\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B407993A-284E-4949-9308-D4E2A5BA92A6}|Api.Domain\\Domain.csproj|c:\\users\\mserr\\documents\\github\\todoapp\\api\\src\\api.domain\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B407993A-284E-4949-9308-D4E2A5BA92A6}|Api.Domain\\Domain.csproj|solutionrelative:api.domain\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B407993A-284E-4949-9308-D4E2A5BA92A6}|Api.Domain\\Domain.csproj|c:\\users\\mserr\\documents\\github\\todoapp\\api\\src\\api.domain\\repository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B407993A-284E-4949-9308-D4E2A5BA92A6}|Api.Domain\\Domain.csproj|solutionrelative:api.domain\\repository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78CB02B7-0C14-44BA-AE43-694EC02A1D29}|Api.Data\\Data.csproj|c:\\users\\mserr\\documents\\github\\todoapp\\api\\src\\api.data\\repository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78CB02B7-0C14-44BA-AE43-694EC02A1D29}|Api.Data\\Data.csproj|solutionrelative:api.data\\repository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D356CC47-41EE-4B95-8457-AD3D19A77F0F}|Api.Application\\application.csproj|c:\\users\\mserr\\documents\\github\\todoapp\\api\\src\\api.application\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D356CC47-41EE-4B95-8457-AD3D19A77F0F}|Api.Application\\application.csproj|solutionrelative:api.application\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,15 +83,164 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UserDtoCreate.cs",
+              "DocumentMoniker": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Domain\\Dtos\\User\\UserDtoCreate.cs",
+              "RelativeDocumentMoniker": "Api.Domain\\Dtos\\User\\UserDtoCreate.cs",
+              "ToolTip": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Domain\\Dtos\\User\\UserDtoCreate.cs",
+              "RelativeToolTip": "Api.Domain\\Dtos\\User\\UserDtoCreate.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T13:35:42.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Domain\\Dtos\\User\\UserDto.cs",
+              "RelativeDocumentMoniker": "Api.Domain\\Dtos\\User\\UserDto.cs",
+              "ToolTip": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Domain\\Dtos\\User\\UserDto.cs",
+              "RelativeToolTip": "Api.Domain\\Dtos\\User\\UserDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T13:34:42.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserDtoUpdate.cs",
+              "DocumentMoniker": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Domain\\Dtos\\User\\UserDtoUpdate.cs",
+              "RelativeDocumentMoniker": "Api.Domain\\Dtos\\User\\UserDtoUpdate.cs",
+              "ToolTip": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Domain\\Dtos\\User\\UserDtoUpdate.cs",
+              "RelativeToolTip": "Api.Domain\\Dtos\\User\\UserDtoUpdate.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T05:06:19.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Application\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Api.Application\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Application\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Api.Application\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAIsAAAAAAAAAAAAQwJsAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T04:55:02.414Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Domain\\Interfaces\\IRepository.cs",
+              "RelativeDocumentMoniker": "Api.Domain\\Interfaces\\IRepository.cs",
+              "ToolTip": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Domain\\Interfaces\\IRepository.cs",
+              "RelativeToolTip": "Api.Domain\\Interfaces\\IRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T04:52:37.389Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Service\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Api.Service\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Service\\Services\\UserService.cs",
+              "RelativeToolTip": "Api.Service\\Services\\UserService.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAADIAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T04:50:40.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Domain\\Repository\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "Api.Domain\\Repository\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Domain\\Repository\\IUserRepository.cs",
+              "RelativeToolTip": "Api.Domain\\Repository\\IUserRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T04:50:31.755Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ITaskRepository.cs",
+              "DocumentMoniker": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Domain\\Repository\\ITaskRepository.cs",
+              "RelativeDocumentMoniker": "Api.Domain\\Repository\\ITaskRepository.cs",
+              "ToolTip": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Domain\\Repository\\ITaskRepository.cs",
+              "RelativeToolTip": "Api.Domain\\Repository\\ITaskRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T04:50:22.075Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Data\\Repository\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "Api.Data\\Repository\\BaseRepository.cs",
+              "ToolTip": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Data\\Repository\\BaseRepository.cs",
+              "RelativeToolTip": "Api.Data\\Repository\\BaseRepository.cs",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAgwGEAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T03:46:25.045Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TaskService.cs",
+              "DocumentMoniker": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Service\\Services\\TaskService.cs",
+              "RelativeDocumentMoniker": "Api.Service\\Services\\TaskService.cs",
+              "ToolTip": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Service\\Services\\TaskService.cs",
+              "RelativeToolTip": "Api.Service\\Services\\TaskService.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACcAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T14:10:47.232Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Application\\Startup.cs",
+              "RelativeDocumentMoniker": "Api.Application\\Startup.cs",
+              "ToolTip": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Application\\Startup.cs",
+              "RelativeToolTip": "Api.Application\\Startup.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAgwC0AAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T22:22:52.18Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Application\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Api.Application\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Application\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Api.Application\\Controllers\\LoginController.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAApwCIAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T19:32:59.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "TaskController.cs",
               "DocumentMoniker": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Application\\Controllers\\TaskController.cs",
               "RelativeDocumentMoniker": "Api.Application\\Controllers\\TaskController.cs",
               "ToolTip": "C:\\Users\\mserr\\Documents\\GitHub\\ToDoApp\\Api\\src\\Api.Application\\Controllers\\TaskController.cs",
               "RelativeToolTip": "Api.Application\\Controllers\\TaskController.cs",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAAAC4AAAAAAAAA",
+              "ViewState": "AQIAACwAAAAAAAAAAAApwDkAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T12:07:17.493Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T12:07:17.493Z"
             }
           ]
         }

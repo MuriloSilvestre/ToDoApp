@@ -20,5 +20,9 @@ namespace Api.Domain.Dtos.User
         [Required(ErrorMessage = "Senha é um campo obrigatório")]
         [StringLength(255, ErrorMessage = "Senha deve ter no máximo {1} caracteres.")]
         public string Password { get; set; }
+
+        [Required(ErrorMessage = "Senha é um campo obrigatório")]
+        [StringLength(255, ErrorMessage = "Senha deve ter no máximo {1} caracteres.")]
+        public string NewPassword { get; set; }
     }
 }

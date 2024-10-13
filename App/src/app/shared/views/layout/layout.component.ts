@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
 
@@ -10,5 +10,5 @@ import { HeaderComponent } from '../header/header.component';
   imports: [RouterModule, HeaderComponent],
 })
 export class LayoutComponent {
-  title = 'silver-gestao';
+  title = 'Tarefas';
 }

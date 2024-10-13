@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { User } from '../entities/user.entity';
+import { User } from '../../user/entities/user.entity';
 
 const TOKEN_KEY = 'acessToken';
 const USER_KEY = 'auth-user';
@@ -12,6 +12,7 @@ export class TokenstorageService {
 
   signOut(): void {
     window.localStorage.clear();
+    window.location.reload();
     this.route.navigate(['/home']);
   }
 

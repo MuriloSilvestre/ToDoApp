@@ -1,1 +1,102 @@
-ok
+<div class="task-form-container">
+  <form [formGroup]="taskService.basicForm">
+    <!-- Campo Título -->
+    <div class="form-group">
+      <label for="title">Título</label>
+      <input
+        id="title"
+        type="text"
+        formControlName="Title"
+        placeholder="Digite o título da tarefa"
+        [ngClass]="{
+          'is-invalid':
+            taskService.basicForm.controls['Title'].invalid &&
+            taskService.basicForm.controls['Title'].touched
+        }"
+      />
+      <div
+        *ngIf="
+          taskService.basicForm.controls['Title'].invalid &&
+          taskService.basicForm.controls['Title'].touched
+        "
+        class="error-message"
+      >
+        O título é obrigatório.
+      </div>
+    </div>
+
+    <!-- Campo Descrição -->
+    <div class="form-group">
+      <label for="description">Descrição</label>
+      <textarea
+        id="description"
+        formControlName="Description"
+        placeholder="Digite a descrição da tarefa"
+        [ngClass]="{
+          'is-invalid':
+            taskService.basicForm.controls['Description'].invalid &&
+            taskService.basicForm.controls['Description'].touched
+        }"
+      ></textarea>
+      <div
+        *ngIf="
+          taskService.basicForm.controls['Description'].invalid &&
+          taskService.basicForm.controls['Description'].touched
+        "
+        class="error-message"
+      >
+        A descrição é obrigatória.
+      </div>
+    </div>
+
+    <!-- Campo Status (Concluído ou Não) -->
+    <div class="form-group">
+      <label for="isCompleted">Status</label>
+      <select
+        id="isCompleted"
+        [(ngModel)]="IsCompleted"
+        formControlName="IsCompleted"
+      >
+        <option [value]="''">-- Selecione uma opção --</option>
+        <option [value]="false">Pendente</option>
+        <option [value]="true">Concluída</option>
+      </select>
+    </div>
+
+    <!-- Campo Data de Vencimento -->
+    <div class="form-group">
+      <label for="dueDate">Data de Vencimento</label>
+      <input
+        id="dueDate"
+        type="date"
+        formControlName="DueDate"
+        [ngClass]="{
+          'is-invalid':
+            taskService.basicForm.controls['DueDate'].invalid &&
+            taskService.basicForm.controls['DueDate'].touched
+        }"
+      />
+      <div
+        *ngIf="
+          taskService.basicForm.controls['DueDate'].invalid &&
+          taskService.basicForm.controls['DueDate'].touched
+        "
+        class="error-message"
+      >
+        A data de vencimento é obrigatória.
+      </div>
+    </div>
+
+    <!-- Botões de Submissão e Cancelamento -->
+    <div class="form-actions">
+      <button type="button" (click)="onCancel()">Cancelar</button>
+      <button
+        type="submit"
+        [disabled]="taskService.basicForm.invalid"
+        (click)="ngOnSubmit()"
+      >
+        {{ this.taskId ? "Editar" : "Cadastrar" }}
+      </button>
+    </div>
+  </form>
+</div>

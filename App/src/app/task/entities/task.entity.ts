@@ -1,17 +1,17 @@
 export class Task {
-  public id?: number;
+  public id!: number;
 
-  public Title!: string;
+  public title!: string;
 
-  public Description!: string;
+  public description!: string;
 
-  public IsCompleted!: boolean;
+  public isCompleted!: boolean;
 
-  public DueDate!: Date;
+  public dueDate!: Date;
 
-  public UserId?: number;
+  public userId?: number;
 
-  public CreateAt!: Date;
+  public createAt!: Date;
 
-  public UpdateAt?: Date;
+  public updateAt?: Date;
 }

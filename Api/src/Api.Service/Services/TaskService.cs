@@ -76,8 +76,19 @@ namespace Api.Service.Services
 
         public async Task<TaskDtoUpdateResult> Put(TaskDtoUpdate task)
         {
+            var email = _httpContextAccessor.HttpContext.User.Identity.Name;
+
+            var user = await _userRepository.FindByLogin(email);
+
+            if (user == null)
+            {
+                throw new Exception("Usuário não autenticado.");
+            }
+
             var model = _mapper.Map<TaskModel>(task);
             var entity = _mapper.Map<TaskEntity>(model);
+
+            entity.UserId = user.Id;
 
             var result = await _repository.UpdateAsync(entity);
             return _mapper.Map<TaskDtoUpdateResult>(result);

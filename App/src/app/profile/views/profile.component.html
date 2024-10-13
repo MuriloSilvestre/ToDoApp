@@ -1,10 +1,9 @@
 <div class="main">
   <div class="header">
-    <h2>Olá {{ user.Name }}</h2>
+    <h2>{{ "Perfil" }}</h2>
     <nav>
-      <button [routerLink]="['/perfil']">Detalhes</button>
-      <button [routerLink]="['editar']">Editar Perfil</button>
-      <button [routerLink]="['configuracoes']">Configurações</button>
+      <button [routerLink]="['/profile']">Detalhes</button>
+      <button *ngIf="user.id == 1" [routerLink]="['/user']">Usuários</button>
     </nav>
   </div>
   <div class="content">

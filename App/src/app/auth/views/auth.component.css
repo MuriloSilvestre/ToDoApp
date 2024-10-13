@@ -17,7 +17,6 @@
   flex-direction: column;
   padding: 2rem;
   gap: 16px; /* Aumentado para mais espaço entre os elementos */
-  max-width: 400px; /* Limitar a largura do conteúdo */
   border-radius: 1rem;
   background-color: rgba(
     255,
@@ -93,7 +92,7 @@ label {
 
 input[type="email"],
 input[type="password"] {
-  width: 100%;
+  width: 50vw;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;

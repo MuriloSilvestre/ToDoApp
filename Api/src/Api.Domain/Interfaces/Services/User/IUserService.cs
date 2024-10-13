@@ -9,6 +9,7 @@ namespace Api.Domain.Interfaces.Services.User
     public interface IUserService
     {
         Task<UserDto> Get(int id);
+        Task<UserDto> GetByEmail(string email);
         Task<IEnumerable<UserDto>> GetAll();
         Task<UserDtoCreateResult> Post(UserDtoCreate user);
         Task<UserDtoUpdateResult> Put(UserDtoUpdate user);

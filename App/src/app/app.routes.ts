@@ -4,10 +4,12 @@ import { AuthComponent } from './auth/views/auth.component';
 import { HomeComponent } from './home/views/home.component';
 import { TaskComponent } from './task/views/task.component';
 import { NewTaskComponent } from './task/views/new-task/new-task.component';
+import { ListUserComponent } from './user/views/list/list-user.component';
 import { ProfileComponent } from './profile/views/profile.component';
 import { DetailComponent } from './profile/views/detail/detail.component';
-import { EditComponent } from './profile/views/edit/edit.component';
-import { ConfigurationComponent } from './profile/views/configuration/configuration.component';
+import { UserComponent } from './user/views/user.component';
+import { NewUserComponent } from './user/views/new-user/new-user.component';
+import { ListTaskComponent } from './task/views/list/list-task.component';
 
 export const routes: Routes = [
   {
@@ -27,6 +29,10 @@ export const routes: Routes = [
         component: TaskComponent,
         children: [
           {
+            path: '',
+            component: ListTaskComponent,
+          },
+          {
             path: 'new-task',
             component: NewTaskComponent,
           },
@@ -37,20 +43,30 @@ export const routes: Routes = [
         ],
       },
       {
-        path: 'perfil',
+        path: 'profile',
         component: ProfileComponent,
         children: [
           {
             path: '',
             component: DetailComponent,
           },
+        ],
+      },
+      {
+        path: 'user',
+        component: UserComponent,
+        children: [
           {
-            path: 'editar',
-            component: EditComponent,
+            path: '',
+            component: ListUserComponent,
           },
           {
-            path: 'configuracoes',
-            component: ConfigurationComponent,
+            path: 'new-user',
+            component: NewUserComponent,
+          },
+          {
+            path: 'new-user/:id',
+            component: NewUserComponent,
           },
         ],
       },

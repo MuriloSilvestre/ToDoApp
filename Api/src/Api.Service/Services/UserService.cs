@@ -36,6 +36,12 @@ namespace Api.Service.Services
             return _mapper.Map<UserDto>(entity);
         }
 
+        public async Task<UserDto> GetByEmail(string email)
+        {
+            var entity = await _userrepository.FindByLogin(email);
+            return _mapper.Map<UserDto>(entity);
+        }
+
         public async Task<IEnumerable<UserDto>> GetAll()
         {
             var listEntity = await _repository.SelectAsync();
@@ -58,9 +64,9 @@ namespace Api.Service.Services
         {
             var model = _mapper.Map<UserModel>(user);
 
-            if (!string.IsNullOrEmpty(user.Password))
+            if (!string.IsNullOrEmpty(user.NewPassword))
             {
-                model.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
+                model.Password = BCrypt.Net.BCrypt.HashPassword(user.NewPassword);
             }
 
             var entity = _mapper.Map<UserEntity>(model);

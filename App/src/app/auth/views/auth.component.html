@@ -11,7 +11,7 @@
           type="email"
           id="email"
           required
-          [(ngModel)]="user.Email"
+          formControlName="email"
           name="email"
         />
       </div>
@@ -21,12 +21,14 @@
           type="password"
           id="password"
           required
-          [(ngModel)]="user.Password"
+          formControlName="password"
           name="password"
         />
       </div>
       <button
-        [disabled]="!authService.formularioBasico.valid"
+        [disabled]="
+          !authService.formularioBasico.valid && !authService.isFetching()
+        "
         (click)="ngOnSubmit()"
       >
         Entrar

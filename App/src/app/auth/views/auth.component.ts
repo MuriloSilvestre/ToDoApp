@@ -1,4 +1,4 @@
-import { User } from '../entities/user.entity';
+import { User } from '../../user/entities/user.entity';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../service/authentication.service';
@@ -20,7 +20,7 @@ export class AuthComponent implements OnInit {
 
   constructor(
     public authService: AuthenticationService,
-    private Token: TokenstorageService,
+    private token: TokenstorageService,
     private router: Router
   ) {}
 
@@ -33,9 +33,18 @@ export class AuthComponent implements OnInit {
   }
 
   ngOnSubmit(): void {
-    const { nome_usuario, senha } = this.authService.formularioBasico.value;
-    this.authService.login(nome_usuario, senha).subscribe();
-
-    this.router.navigate(['/home']);
+    this.authService.login().subscribe({
+      next: (resData) => {
+        this.router.navigate(['/home']);
+        this.token.saveUser(resData);
+      },
+      error: (error: Error) => {
+        this.authService.error.set(error.message);
+        this.authService.isFetching.set(false);
+      },
+      complete: () => {
+        this.authService.isFetching.set(false);
+      },
+    });
   }
 }

@@ -1,0 +1,180 @@
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espaço entre o label e o input */
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filters label {
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.filters select,
+.filters input[type="date"] {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.filters button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filters button:hover {
+  background-color: #c0392b;
+}
+
+.user-list {
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-height: 64vh;
+  max-height: 64vh;
+}
+
+.user-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #ffffff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  width: 270px;
+  height: 180px;
+  margin: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-content {
+  width: 100%; /* O conteúdo ocupa a largura completa */
+}
+
+.user-actions {
+  display: flex;
+  justify-content: end;
+  gap: 10px; /* Espaçamento entre os botões */
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em; /* Tamanho do ícone */
+  color: #555; /* Cor neutra do ícone */
+  transition: color 0.2s ease;
+}
+
+.icon-button:hover {
+  color: #f15353; /* Cor ao passar o mouse (vermelho para remoção, mas pode ajustar) */
+}
+
+.user-item h3 {
+  margin: 0 0 5px;
+  font-size: 1.2rem;
+}
+
+.user-item p {
+  margin: 5px 0;
+}
+
+.due-date {
+  font-weight: bold;
+}
+
+h3,
+.status {
+  font-weight: bold;
+}
+
+.status-completed {
+  color: #155724; /* Verde escuro para concluído */
+}
+
+.status-pending {
+  color: #1b1b1b; /* Cor normal para pendente */
+}
+
+.status-due-soon {
+  color: #856404; /* Amarelo escuro para vencendo em breve */
+}
+
+.status-overdue {
+  color: #721c24; /* Vermelho escuro para vencido */
+}
+
+.user-item.completed {
+  background-color: #d4edda; /* Verde claro para tarefas concluídas */
+  border-color: #c3e6cb;
+}
+
+.user-item.pending {
+  background-color: #fff; /* Pendente, sem alterações */
+}
+
+.user-item.due-soon {
+  background-color: #fff3cd; /* Amarelo claro para tarefas que vão vencer em breve */
+  border-color: #ffeeba;
+}
+
+.user-item.overdue {
+  background-color: #f8d7da; /* Vermelho claro para tarefas vencidas */
+  border-color: #f5c6cb;
+}
+
+.paginator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  bottom: 0;
+}
+
+.paginator button {
+  background-color: #f15353;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.paginator button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.paginator button:hover:not(:disabled) {
+  background-color: #c74444;
+}
+
+.paginator span {
+  font-size: 16px;
+  font-weight: bold;
+}

@@ -1,0 +1,121 @@
+<div>
+  <div class="filters">
+    <div class="filter-container">
+      <div class="filter-group">
+        <label for="completedFilter">Status:</label>
+        <select
+          id="completedFilter"
+          [(ngModel)]="selectedStatus"
+          (change)="applyFilters()"
+        >
+          <option value="all">Todos</option>
+          <option value="completed">Concluídas</option>
+          <option value="pending">Pendentes</option>
+          <option value="dueSoon">Vencendo em Breve</option>
+          <option value="overdue">Vencidas</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="dueDateFilter">Data:</label>
+        <input
+          type="date"
+          id="dueDateFilter"
+          [(ngModel)]="selectedDueDate"
+          (change)="applyFilters()"
+        />
+      </div>
+
+      <div class="filter-group">
+        <label for="monthFilter">Mês:</label>
+        <select
+          id="monthFilter"
+          [(ngModel)]="selectedMonth"
+          (change)="applyFilters()"
+        >
+          <option value="all">Todos</option>
+          <option *ngFor="let month of months" [value]="month">
+            {{ month }}
+          </option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="yearFilter">Ano:</label>
+        <select
+          id="yearFilter"
+          [(ngModel)]="selectedYear"
+          (change)="applyFilters()"
+        >
+          <option value="all">Todos</option>
+          <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+        </select>
+      </div>
+    </div>
+
+    <button (click)="resetFilters()">Limpar Filtros</button>
+  </div>
+
+  <ul class="task-list">
+    @for(task of paginatedTasks; track task.id){
+    <li
+      class="task-item"
+      [ngClass]="{
+        completed: task.isCompleted,
+        pending: !task.isCompleted && !isOverdue(task) && !isDueSoon(task),
+        'due-soon': !task.isCompleted && isDueSoon(task),
+        overdue: !task.isCompleted && isOverdue(task)
+      }"
+    >
+      <div class="task-content">
+        <h3>{{ task.title }}</h3>
+        <p
+          class="status"
+          [ngClass]="{
+            'status-completed': task.isCompleted,
+            'status-pending':
+              !task.isCompleted && !isOverdue(task) && !isDueSoon(task),
+            'status-due-soon': isDueSoon(task),
+            'status-overdue': isOverdue(task)
+          }"
+        >
+          Status:
+          {{
+            task.isCompleted
+              ? "Concluída"
+              : isDueSoon(task)
+              ? "Vencendo em Breve"
+              : isOverdue(task)
+              ? "Vencida"
+              : "Pendente"
+          }}
+        </p>
+        <p class="due-date">
+          Data de Vencimento: {{ task.dueDate | date : "dd/MM/yyyy" }}
+        </p>
+        <p class="discription">Descrição: {{ task.description }}</p>
+      </div>
+      <div class="task-actions">
+        <button class="icon-button" (click)="edit(task.id)">
+          <span class="material-icons">edit</span>
+        </button>
+        <button class="icon-button" (click)="remove(task.id)">
+          <span class="material-icons">delete</span>
+        </button>
+      </div>
+    </li>
+    } @empty {
+    <li>Não a nenhuma tarefa registrada.</li>
+    }
+  </ul>
+
+  <div class="paginator">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">
+      Anterior
+    </button>
+    <span>Página {{ currentPage }} de {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+      Próxima
+    </button>
+  </div>
+</div>

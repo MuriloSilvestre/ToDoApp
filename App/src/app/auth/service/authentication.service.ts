@@ -1,72 +1,72 @@
-import { User } from './../entities/user.entity';
-import { TokenstorageService } from './tokenstorage.service';
-import { Router } from '@angular/router';
-import { Injectable } from '@angular/core';
-import { Observable, take, tap, map } from 'rxjs';
-import {
-  FormGroup,
-  FormBuilder,
-  Validators,
-  FormControl,
-} from '@angular/forms';
+import { User } from '../../user/entities/user.entity';
+import { catchError, map, Observable, throwError } from 'rxjs';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { environment } from '../../../environments/environment';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, signal } from '@angular/core';
+import { ErrorService } from '../../shared/Services/error.service';
 
 const AUTH_API = environment.apiUrl;
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-};
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService {
   public formularioBasico!: FormGroup;
+  public isFetching = signal(false);
+  public error = signal('');
 
   constructor(
-    private router: Router,
     private http: HttpClient,
-    private fb: FormBuilder,
-    private token: TokenstorageService
+    private errorService: ErrorService,
+    private fb: FormBuilder
   ) {
     this.inicializaForm();
   }
 
-  submit(Email: string, Password: string) {
-    return this.login(Email, Password);
+  submit() {
+    return this.login();
   }
 
   inicializaForm() {
     this.formularioBasico = this.fb.group({
-      Email: [, Validators.compose([Validators.required])],
-      Password: [, Validators.compose([Validators.required])],
+      email: [, Validators.compose([Validators.required])],
+      password: [, Validators.compose([Validators.required])],
     });
   }
 
   preencheFormulario(user: User) {
     this.formularioBasico.patchValue({
-      Email: user.Email,
-      Password: user.Password,
+      email: user.email,
+      password: user.password,
     });
   }
 
-  login(Email: string, Password: string) {
+  login() {
+    this.isFetching.set(true);
+
     return this.http
-      .post<User>(`${AUTH_API}/api/login`, { Email, Password })
+      .post<User>(`${AUTH_API}api/Login`, this.formularioBasico.value)
       .pipe(
-        map((response) => {
-          this.token.saveUser(response);
+        map((resData) => resData),
+        catchError((error) => {
+          console.log(error);
+          this.errorService.showError(
+            'Por favor, tente novamente mais tarde ou entre em contato com o suporte se o problema persistir.'
+          );
+          return throwError(
+            () =>
+              new Error(
+                'Ocorreu um erro inesperado. Por favor, tente novamente mais tarde ou entre em contato com o suporte se o problema persistir.'
+              )
+          );
         })
       );
   }
 
-  forgotpassword(Password: string, confirmarPassword: string): Observable<any> {
-    return this.http.post(
-      AUTH_API + 'forgotpassword',
-      {
-        Password,
-      },
-      httpOptions
-    );
+  forgotpassword(password: string, confirmarpassword: string): Observable<any> {
+    return this.http.post(AUTH_API + 'forgotpassword', {
+      password,
+    });
   }
 }

@@ -40,7 +40,16 @@ namespace application
             Environment.SetEnvironmentVariable("Seconds", "28800");
             
             services.AddControllers();
-
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", builder =>
+                    builder.WithOrigins("http://localhost:4200/", "http://localhost:4200/*")
+                           .AllowAnyOrigin()
+                           .AllowAnyMethod()
+                           .AllowAnyHeader());
+            });
+            
+            services.AddControllers();
             ConfigureService.ConfigureDependenciesService(services);
             ConfigureRepository.ConfigureDependenciesRepository(services);
             var config = new AutoMapper.MapperConfiguration(cfg =>
@@ -139,6 +148,8 @@ namespace application
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors("AllowAll");
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>

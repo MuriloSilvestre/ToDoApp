@@ -1,22 +1,41 @@
 <div class="dashboard">
-  <div class="summary">
-    <div class="card">
-      <h2>Total de Tarefas</h2>
-      <p>{{ totalTasks }}</p>
+  <div class="metrics">
+    <div class="cards">
+      <div class="card total">
+        <h3 class="card-title">Total de Tarefas</h3>
+        <p class="card-data">{{ totalTasks }}</p>
+      </div>
+      <div class="card completed">
+        <h3 class="card-title">Tarefas Concluídas</h3>
+        <p class="card-data">{{ completedTasks }}</p>
+      </div>
+      <div class="card pending">
+        <h3 class="card-title">Tarefas Pendentes</h3>
+        <p class="card-data">{{ pendingTasks }}</p>
+      </div>
+      <div class="card rate">
+        <h3 class="card-title">Taxa de Conclusão</h3>
+        <p class="card-data">{{ completionRate }}%</p>
+      </div>
     </div>
-    <div class="card">
-      <h2>Tarefas Concluídas</h2>
-      <p>{{ completedTasks }}</p>
-    </div>
-    <div class="card">
-      <h2>Tarefas Pendentes</h2>
-      <p>{{ pendingTasks }}</p>
-    </div>
-    <div class="card">
-      <h2>Taxa de Conclusão</h2>
-      <p>{{ completionRate | number : "1.0-0" }}%</p>
+
+    <div class="charts">
+      <div class="chart-container pie-chart-container">
+        <canvas id="taskTotalChart"></canvas>
+      </div>
+
+      <div class="chart-container pie-chart-container">
+        <canvas id="overdueTaskChart"></canvas>
+      </div>
     </div>
   </div>
 
-  <!-- Aqui você pode adicionar gráficos ou outros widgets -->
+  <div class="calendar">
+    <h3 class="title">Tarefas do semestre</h3>
+    <div class="simple-calendar">
+      <div class="chart-container">
+        <canvas id="taskMonthlyChart"></canvas>
+      </div>
+    </div>
+  </div>
 </div>

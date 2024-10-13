@@ -1,25 +1,26 @@
 <div class="header background-black">
   <div class="logo" [routerLink]="['/home']">
     <div class="nome">
-      <h1 class="font-silver">Tarefas</h1>
+      <h1 class="font-silver">Dashboard</h1>
     </div>
   </div>
 
-  <nav *ngIf="this.router.url !== '/home'">
+  <nav *ngIf="user.name !== undefined">
     <button [routerLink]="['/task']" routerLinkActive="active">Tarefas</button>
   </nav>
 
   <div class="profile">
-    <button *ngIf="this.router.url !== '/home'" (click)="back()">Voltar</button>
+    <button [disabled]="router.url == '/home'" (click)="back()">Voltar</button>
     <h2
-      *ngIf="this.user.Name !== undefined"
+      *ngIf="user.name !== undefined"
       class="font-white"
-      [routerLink]="['/perfil']"
+      [routerLink]="['/profile']"
     >
-      Ola {{ user.Name }}!
+      Ola {{ user.name }}!
     </h2>
+    <button *ngIf="user.name !== undefined" (click)="logout()">Sair</button>
     <h2
-      *ngIf="this.user.Name === undefined"
+      *ngIf="user.name === undefined"
       class="font-white"
       [routerLink]="['/auth']"
     >

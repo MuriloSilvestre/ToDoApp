@@ -1,3 +1,4 @@
+/* Estrutura principal */
 .main {
   display: flex;
   flex-direction: column;
@@ -5,43 +6,121 @@
   padding: 0px;
   gap: 8px;
   height: calc(100vh - 96px);
-  .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+}
+
+/* Cabeçalho */
+.main .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  width: 100vw;
+}
+
+.main .header h2 {
+  font-family: "Rajdhani";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 48px;
+  margin: 0;
+  color: #f15353;
+}
+
+/* Avatar */
+.main .header .avatar {
+  width: 100px;
+  height: 100px;
+  background: #f8f8f8;
+  border-radius: 4px;
+}
+
+.main .header .avatar img {
+  width: 100px;
+  height: 100px;
+}
+
+/* Navegação */
+.main .header nav {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 32px;
+}
+
+/* Botões */
+button {
+  padding: 0.75rem 2rem;
+  background-color: #f15353;
+  color: white;
+  font-size: 1rem;
+  font-family: "Raleway", sans-serif;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #d94d4d;
+}
+
+button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .main .header {
+    flex-direction: column;
     align-items: center;
-    padding: 8px 16px;
-    width: 100vw;
-    h2 {
-      font-family: "Rajdhani";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 38px;
-      line-height: 48px;
+    text-align: center;
+    gap: 16px;
+  }
 
-      margin: 0;
+  .main .header h2 {
+    font-size: 28px;
+    line-height: 38px;
+  }
 
-      color: #f15353;
-    }
+  .main .header .avatar {
+    width: 80px;
+    height: 80px;
+  }
 
-    .avatar {
-      width: 100px;
-      height: 100px;
+  .main .header .avatar img {
+    width: 80px;
+    height: 80px;
+  }
 
-      background: #f8f8f8;
-      border-radius: 4px;
-      img {
-        width: 100px;
-        height: 100px;
-      }
-    }
+  .main .header nav {
+    flex-direction: column;
+    gap: 16px;
+  }
 
-    nav {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      padding: 0px;
-      gap: 32px;
-    }
+  button {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+/* Para telas menores que 480px */
+@media (max-width: 480px) {
+  .main .header h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .main .header .avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .main .header .avatar img {
+    width: 60px;
+    height: 60px;
   }
 }

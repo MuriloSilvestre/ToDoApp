@@ -2,6 +2,7 @@ using System;
 using System.Net;
 using System.Threading.Tasks;
 using Api.Domain.Dtos;
+using Api.Domain.Interfaces.Services.Task;
 using Api.Domain.Interfaces.Services.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -12,10 +13,13 @@ namespace Api.Application.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        [AllowAnonymous]
+        public ILoginService _service { get; set; }
+        public LoginController(ILoginService service)
+        {
+            _service = service;
+        }
         [HttpPost]
-        public async Task<object> Login([FromBody] LoginDto loginDto,
-                                        [FromServices] ILoginService service)
+        public async Task<object> Login([FromBody] LoginDto loginDto)
         {
             if (!ModelState.IsValid)
             {
@@ -28,7 +32,7 @@ namespace Api.Application.Controllers
 
             try
             {
-                var result = await service.FindByLogin(loginDto);
+                var result = await _service.FindByLogin(loginDto);
                 if (result != null)
                 {
                     return result;
