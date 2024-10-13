@@ -33,7 +33,7 @@ O projeto está organizado da seguinte forma:
 ### 1. Clonar o Repositório
 
 ```bash
-git clone https://github.com/seu-usuario/ToDoApp.git
+git clone https://github.com/MuriloSilvestre/ToDoApp.git
 cd ToDoApp
 ```
 
