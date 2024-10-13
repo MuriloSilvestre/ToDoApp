@@ -73,7 +73,7 @@ Alguns dos principais endpoints disponíveis:
 
 ## 🛠 Tecnologias Utilizadas
 
-- **Backend**: .NET Core 6
+- **Backend**: .NET Core 8
 - **Frontend**: Angular 18
 - **Banco de Dados**: Entity Framework Core
 
